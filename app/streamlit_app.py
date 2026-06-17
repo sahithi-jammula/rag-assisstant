@@ -1,4 +1,4 @@
-"""Streamlit UI for the Phase 1 RAG assistant (D2L / study corpus)."""
+"""Streamlit UI for the RAG Assistant (deep learning corpus and uploads)."""
 
 from __future__ import annotations
 
@@ -112,7 +112,7 @@ def main() -> None:
     ensure_dirs()
     key_ok = bool(get_api_key()) if remote_llm_api_key_required() else True
 
-    st.title("RAG Assistant — Deep Learning (Phase 1)")
+    st.title("RAG Assistant — Deep Learning")
     st.caption(
         "Retrieval-augmented answers from your corpus (bundled notes + optional **d2l-en** clone) "
         "and a configurable LLM. Expand **Retrieved chunks** to inspect grounding."

@@ -4,7 +4,7 @@ For a consolidated **command cheat sheet** and **debugging checklist**, see [scr
 
 ## Prerequisites
 
-- **Python 3.11+** (3.12 works; match your classroom or org standard if needed).
+- **Python 3.11+** (3.12 is fine; align with your environment policy if needed).
 - A **Gemini** or **OpenAI** API key in **`.env`**, depending on **`LLM_PROVIDER`** in `config.py` (see [llm-providers.md](llm-providers.md)).
 - ~1–2 GB free disk for Python packages + the embedding model download (first run).
 

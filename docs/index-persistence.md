@@ -1,6 +1,6 @@
 # Index persistence (FAISS + metadata)
 
-Phase 1 persists the vector index so you do not re-embed the entire corpus on every app restart. You can still **force a full rebuild** when documents or embedding settings change.
+The vector index is **persisted** so the corpus is not re-embedded on every app restart. You can still **force a full rebuild** when documents or embedding settings change.
 
 ## Files under `data/index/`
 
@@ -37,9 +37,9 @@ Rebuild (full re-ingest, re-chunk, re-embed, overwrite) when:
 4. Construct a fresh FAISS index.
 5. Atomically replace persisted files (write temp then rename where feasible; see implementation).
 
-## Partial / incremental updates (not Phase 1)
+## Partial / incremental updates (not implemented)
 
-Production systems often incrementally upsert changed documents. This repo intentionally uses **full rebuild** for clarity. Incremental re-embed is an optional enhancement you could add later—not part of the two-phase RAG model here.
+Production systems often incrementally upsert changed documents. This repo intentionally uses **full rebuild** for clarity. Incremental re-embed is an optional enhancement for a fork.
 
 ## Loading at startup
 

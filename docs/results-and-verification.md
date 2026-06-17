@@ -1,6 +1,6 @@
 # Results and verification
 
-Use this page to confirm **Basic RAG (Phase 1)** or **Advanced RAG (Phase 2)** behavior end-to-end and to interpret what you see in the UI.
+Use this page to confirm the app behaves as expected after setup and to interpret what you see in the UI.
 
 ---
 
@@ -34,7 +34,7 @@ Use this page to confirm **Basic RAG (Phase 1)** or **Advanced RAG (Phase 2)** b
 
 ---
 
-## Smoke-test (optional, developer)
+## Smoke test (optional)
 
 With venv active and `src` on the path (Streamlit does this automatically):
 
@@ -48,7 +48,7 @@ If this fails with missing modules, fix the environment first ([troubleshooting.
 
 ## Related reading
 
-- [phase-roadmap.md](phase-roadmap.md) — Basic vs Advanced RAG and flowcharts.
+- [pipeline-overview.md](pipeline-overview.md) — Pipeline flowcharts.
 - [d2l-sample-questions.md](d2l-sample-questions.md) — Example questions and paraphrase pairs to test cache hits.
 - [semantic-caching.md](semantic-caching.md) — `SEMANTIC_CACHE_SIMILARITY_THRESHOLD` and invalidation.
 - [scripts-and-commands.md](scripts-and-commands.md) — Commands and debug checklist.

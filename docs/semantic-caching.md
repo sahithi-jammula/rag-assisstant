@@ -1,6 +1,6 @@
 # Semantic caching
 
-The app can **reuse a past answer** when a new question is **semantically close** to one asked before (same embedding space as retrieval). This is part of **Phase 2 — Advanced RAG** ([phase-roadmap.md](phase-roadmap.md)); it skips **FAISS search** and **LLM generation** on a hit, saving latency and API cost.
+The app can **reuse a past answer** when a new question is **semantically close** to one asked before (same embedding space as retrieval). On a hit it skips **FAISS search** and the **main RAG LLM** call, saving latency and API cost. How it fits in the stack: [pipeline-overview.md](pipeline-overview.md).
 
 **Two-tier lookup:** **L1** matches the **normalized question string** (strip, case-fold, collapse whitespace) against stored questions. **L2** uses **cosine similarity** of question embeddings against the configured threshold. The Streamlit UI shows one line per answer, e.g. `cache: exact (L1) · retrieval: 0.0s` or `cache: semantic (L2) · retrieval: 0.0s` or `cache: miss · retrieval: 5.5s` (retrieval time is **FAISS + BM25 + rerank** only, not HyDE or the LLM call).
 
@@ -12,13 +12,13 @@ Sample questions and **A/B paraphrase pairs** to exercise the cache: [d2l-sample
 
 ## Configuration (`src/rag_assistant/config.py`)
 
-| Constant | Default (in code) | Meaning |
-|----------|-------------------|--------|
-| `SEMANTIC_CACHE_SIMILARITY_THRESHOLD` | `0.92` | Minimum **cosine similarity** vs a cached question embedding to count as a hit. |
-| `SEMANTIC_CACHE_MAX_ENTRIES` | `200` | FIFO cap; oldest entries drop when full. |
-| `SEMANTIC_CACHE_BACKEND` | `"json"` | `"json"` (file under `data/cache/`) or `"redis"` (see [redis-stack.md](redis-stack.md)). |
-| `REDIS_URL` | `redis://127.0.0.1:6379/0` | Redis URL when using the `redis` backend. |
-| `REDIS_SEMANTIC_CACHE_KEY_PREFIX` | `"rag:sc:v1"` | Namespace for Redis keys. |
+| Constant | See `config.py` | Meaning |
+|----------|-----------------|--------|
+| `SEMANTIC_CACHE_SIMILARITY_THRESHOLD` | current value in repo | Minimum **cosine similarity** vs a cached question embedding to count as a hit. |
+| `SEMANTIC_CACHE_MAX_ENTRIES` | current value in repo | FIFO cap; oldest entries drop when full. |
+| `SEMANTIC_CACHE_BACKEND` | `"json"` or `"redis"` | File under `data/cache/` vs Redis ([redis-stack.md](redis-stack.md)). |
+| `REDIS_URL` | when using Redis | Connection URL. |
+| `REDIS_SEMANTIC_CACHE_KEY_PREFIX` | when using Redis | Namespace for Redis keys. |
 
 Semantic cache is **always on**. If **`SEMANTIC_CACHE_BACKEND = "redis"`** and Redis is unreachable at startup, the app **falls back to the JSON file cache** and logs a warning.
 
@@ -79,7 +79,7 @@ flowchart TB
   HIT --> OUT
 ```
 
-## Relation to “advanced RAG”
+## Relation to the rest of the stack
 
 Semantic caching sits **around** `answer_question`: same retrieval and LLM stack, with a **short-circuit** when a near-duplicate intent was already answered under the same index and model.
 

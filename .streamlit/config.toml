@@ -1,4 +1,4 @@
-# Used for local runs and Docker. App Runner / some hosts set PORT; entrypoint passes --server.port.
+# Streamlit server defaults (local or when binding a non-default host).
 
 [server]
 headless = true

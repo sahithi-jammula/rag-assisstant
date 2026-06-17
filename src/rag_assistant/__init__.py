@@ -1,4 +1,4 @@
-"""RAG Assistant — modular Phase 1 pipeline (documentation-grounded Q&A)."""
+"""RAG Assistant — modular RAG pipeline (documentation-grounded Q&A)."""
 
 __all__ = ["__version__"]
 

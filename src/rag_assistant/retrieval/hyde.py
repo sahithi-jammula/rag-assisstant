@@ -15,11 +15,11 @@ logger = logging.getLogger(__name__)
 def _hypothetical_passage(llm: LLMClient, question: str, max_chars: int) -> str:
     prompt = (
         "You are drafting a short hypothetical passage that could appear in a deep learning "
-        "textbook (Dive into Deep Learning style). It should directly help answer the learner's "
+        "textbook (Dive into Deep Learning style). It should directly help answer the user's "
         "question with definitions, intuition, or steps — not meta commentary.\n"
         "Output plain prose only (no bullet list unless essential). "
         f"Hard limit: at most {max_chars} characters.\n\n"
-        f"Learner question:\n{question.strip()}\n"
+        f"Question:\n{question.strip()}\n"
     )
     text = llm.generate(prompt).strip()
     if len(text) > max_chars:

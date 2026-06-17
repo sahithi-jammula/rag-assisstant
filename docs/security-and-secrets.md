@@ -1,6 +1,6 @@
 # Security and secrets
 
-This project is a **local learning tool**, but it still touches **API keys** and **potentially sensitive documents**. Treat both with normal hygiene.
+The project touches **API keys** and **potentially sensitive documents**. Treat both with normal hygiene.
 
 ## Gemini or OpenAI API key
 
@@ -28,11 +28,11 @@ This project is a **local learning tool**, but it still touches **API keys** and
 
 ## Model output
 
-LLMs can **leak training biases** or **confidently guess**. For operations work, always verify against your cluster and change management process—Phase 1 documentation grounding reduces but does not eliminate risk.
+LLMs can **leak training biases** or **confidently guess**. Documentation grounding reduces but does not eliminate that risk—verify critical facts against primary sources.
 
-## Public deployment (AWS, etc.)
+## Public exposure
 
-If you expose the Streamlit UI on the internet, treat it like **an open website**: there is **no account login** in this repo, so anyone with the URL can trigger **LLM calls** (cost) and **upload files** to the server. Put keys only in the host’s environment / secrets manager, never in git. See [aws-deployment.md](aws-deployment.md).
+If you expose the Streamlit UI on a network, treat it like **an open endpoint**: there is **no account login** in this repo, so anyone with the URL can trigger **LLM calls** (cost) and **upload files** to the server. Keep API keys in the host environment or a secrets manager, never in git. See [security-and-secrets.md](security-and-secrets.md).
 
 ## Related reading
 

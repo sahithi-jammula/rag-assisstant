@@ -20,7 +20,7 @@ def build_rag_prompt(question: str, hits: list[dict], prompt_version: str = PROM
         blocks.append(f"### Source {i}: {h['source']}\n{h['text']}")
     context = "\n\n".join(blocks) if blocks else "(no retrieved context)"
     return (
-        "You are a careful deep learning tutor helping a learner (Dive into Deep Learning / similar notes).\n"
+        "You are a careful deep learning tutor. Use clear explanations grounded in Dive into Deep Learning–style notes when the context supports them.\n"
         "Answer using ONLY the CONTEXT below when it contains enough information.\n"
         "If CONTEXT is missing or insufficient, say so clearly and suggest what material "
         "the user should add to the corpus.\n"

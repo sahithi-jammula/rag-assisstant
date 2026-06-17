@@ -87,7 +87,7 @@ The console message that **support for `google.generativeai` has ended** is a **
 
 ## CUDA vs CPU
 
-Phase 1 assumes **CPU** inference for embeddings. If you install GPU PyTorch by mistake, it still works but may warn about CUDA availability. For learning, CPU is simpler.
+Embeddings default to **CPU**. If you install GPU PyTorch by mistake, it still works but may warn about CUDA availability.
 
 ## Gemini errors
 
@@ -104,7 +104,7 @@ You need a successful **Rebuild index** after documents exist. If `data/index/` 
 
 ## PDF text looks wrong
 
-Not a bug in RAG specifically—**extraction** lost layout. Prefer Markdown sources or a stronger PDF pipeline in Phase 2.
+Not a bug in RAG specifically—**extraction** lost layout. Prefer Markdown sources or a stronger PDF pipeline.
 
 ## Empty retrieval / irrelevant chunks
 

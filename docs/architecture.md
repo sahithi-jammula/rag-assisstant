@@ -1,6 +1,6 @@
 # Architecture
 
-This document describes the **logical** RAG pipeline, **physical** layout on disk, and **module boundaries**. It matches the mental model for **Basic RAG**; **Advanced RAG** adds retrieval and cache layers on the same path (see [phase-roadmap.md](phase-roadmap.md), [advanced-rag.md](advanced-rag.md)).
+This document describes the **logical** RAG pipeline, **physical** layout on disk, and **module boundaries**. For end-to-end flowcharts see [pipeline-overview.md](pipeline-overview.md); for retrieval stages and knobs see [advanced-rag.md](advanced-rag.md).
 
 ```text
 Document Sources → Loader → Chunking (+ metadata) → Embeddings → FAISS
@@ -11,9 +11,8 @@ Advanced retrieval (dense / BM25 / RRF / rerank; optional chapter filters)
 
 ## Design goals
 
-- **Explicit stages**: each step is a small module you can read in isolation.
-- **Educational**: you can replace one stage (e.g. chunking strategy) without rewriting the whole app.
-- **Evolution**: **Phase 2 (Advanced RAG)** layers hybrid retrieval, reranking, HyDE, filters, and semantic cache on the same boundaries; see [phase-roadmap.md](phase-roadmap.md).
+- **Explicit stages:** each step is a small module you can change in isolation (e.g. chunking strategy).
+- **Auditable retrieval:** hybrid search, rerank, HyDE, and cache sit on clear boundaries—see [pipeline-overview.md](pipeline-overview.md).
 
 ## High-level flow
 
@@ -108,7 +107,7 @@ sequenceDiagram
   UI-->>User: render
 ```
 
-## Module boundaries (Basic + Advanced RAG)
+## Module boundaries
 
 | Module | Responsibility | Inputs | Outputs |
 |--------|----------------|--------|---------|
@@ -116,7 +115,7 @@ sequenceDiagram
 | `rag_assistant.chunking` | Split documents into overlapping chunks; indexing adds path-derived **`metadata`** (e.g. D2L `chapter_*`). | Documents | Chunk records (`text`, `source`, `chunk_index`, `metadata`) |
 | `rag_assistant.embeddings` | Turn text into vectors using `sentence-transformers`. | Strings or lists of strings | `numpy` vectors (L2-normalized for cosine-style search) |
 | `rag_assistant.vectorstore` | Maintain FAISS index + parallel metadata; save/load from `data/index/`. | Vectors + metadata | Persisted files; `search(query_vector, k)` |
-| `rag_assistant.retrieval` | Dense + optional BM25/RRF/rerank; optional **HyDE** vector upstream; optional **chapter filters**. | Question + store + vectors | Ranked hits with `row_id`, scores, optional `metadata` |
+| `rag_assistant.retrieval` | Dense + BM25 + RRF + rerank; **HyDE** on dense path; optional **chapter filters**. | Question + store + vectors | Ranked hits with `row_id`, scores, optional `metadata` |
 | `rag_assistant.cache` | Semantic cache lookup/store (JSON or Redis). | Query embedding + fingerprint tags | `CacheEntry` or miss |
 | `rag_assistant.llm` | `LLMClient.generate` (Gemini, OpenAI, or `echo` via `LLM_PROVIDER` / factory). | Prompt string | Model text |
 | `rag_assistant.pipeline` | Glue: “build index from disk” and “answer question using loaded index.” | Config paths | Side effects + structured results |
@@ -155,10 +154,11 @@ rag-assistant/             # suggested checkout folder name
 
 ## Configuration surface
 
-Phase 1 centralizes tunables in `src/rag_assistant/config.py`: embedding model id, chunk size/overlap, top-k, paths, Gemini/OpenAI model settings, `LLM_PROVIDER`, HyDE, metadata filters, semantic cache backend and Redis settings, retrieval pool sizes. **Only** **API keys** are read from the environment / `.env` (Gemini / Google and/or OpenAI—see [development-setup.md](development-setup.md), [scripts-and-commands.md](scripts-and-commands.md), and [security-and-secrets.md](security-and-secrets.md)).
+Tunables live in `src/rag_assistant/config.py`: embedding model id, chunk size/overlap, top-k, paths, Gemini/OpenAI model settings, `LLM_PROVIDER`, HyDE, metadata filters, semantic cache backend and Redis settings, retrieval pool sizes. **Only** **API keys** are read from the environment / `.env` (Gemini / Google and/or OpenAI—see [development-setup.md](development-setup.md), [scripts-and-commands.md](scripts-and-commands.md), and [security-and-secrets.md](security-and-secrets.md)).
 
 ## Related reading
 
+- [pipeline-overview.md](pipeline-overview.md) — Index and query flowcharts.
 - [technology-stack.md](technology-stack.md) — Why Streamlit, FAISS, MiniLM, etc.
 - [rag-pipeline-deep-dive.md](rag-pipeline-deep-dive.md) — What each stage is really doing.
 - [scripts-and-commands.md](scripts-and-commands.md) — Commands and debugging.

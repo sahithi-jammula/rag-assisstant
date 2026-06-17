@@ -1,6 +1,6 @@
-# Advanced RAG pipeline (implemented)
+# Retrieval pipeline
 
-This document describes **Phase 2 — Advanced RAG** in [phase-roadmap.md](phase-roadmap.md). **This repository always runs this stack** (no feature flags): semantic cache lookup → HyDE-augmented dense vector → dense candidate pool → **BM25** → **RRF** → **cross-encoder rerank** → prompt → LLM. Tune behavior by editing constants in **`src/rag_assistant/config.py`**; only **API keys** use **`.env`**.
+The query path runs **semantic cache** (possible hit) → **HyDE**-augmented dense vector → **dense candidate pool** → **BM25** → **RRF** → **cross-encoder rerank** → **RAG prompt** → **LLM**. There are no feature flags to disable this stack—adjust numbers and backends in **`src/rag_assistant/config.py`**; only **API keys** use **`.env`**. End-to-end diagrams: [pipeline-overview.md](pipeline-overview.md).
 
 ## Stages
 
@@ -92,6 +92,7 @@ flowchart TB
 
 ## Related reading
 
+- [pipeline-overview.md](pipeline-overview.md) — End-to-end index and query flowcharts.
 - [scripts-and-commands.md](scripts-and-commands.md) — Commands and debug entrypoints.
 - [rag-pipeline-deep-dive.md](rag-pipeline-deep-dive.md) — Dense similarity intuition.
 - [semantic-caching.md](semantic-caching.md) — Cache layer and threshold (in `config.py`).

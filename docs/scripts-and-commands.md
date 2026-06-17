@@ -1,17 +1,12 @@
 # Scripts, commands, and operator reference
 
-This page ties together **what to run**, **what each script does**, and **how to debug**. It complements [phase-roadmap.md](phase-roadmap.md) (phases and evolution) and [development-setup.md](development-setup.md) (first-time install).
+This page ties together **what to run**, **what each script does**, and **how to debug**. It complements [pipeline-overview.md](pipeline-overview.md) and [development-setup.md](development-setup.md).
 
 ---
 
-## Phase alignment (quick)
+## Query-time stack (reference)
 
-| Phase | In this repo | Where to read more |
-|-------|----------------|---------------------|
-| **1 — Basic RAG** | Conceptual minimal path: chunk → embed → dense top-k → prompt → LLM. | [phase-roadmap.md](phase-roadmap.md), [architecture.md](architecture.md) |
-| **2 — Advanced RAG** | **Always executed** at query time: semantic cache, HyDE, dense pool, BM25, RRF, cross-encoder rerank. Tune in **`src/rag_assistant/config.py`** (not env toggles). | [advanced-rag.md](advanced-rag.md), [semantic-caching.md](semantic-caching.md) |
-
-**Agents / tool-calling copilots** are **out of scope** for this roadmap; use a different repository if you need that architecture.
+At query time the app always runs **semantic cache** (possible hit) → **HyDE** on the dense path → **FAISS pool** → **BM25** → **RRF** → **cross-encoder rerank** → prompt → **LLM**. Tune pools, models, and cache in **`src/rag_assistant/config.py`** (not environment toggles for those features). Details: [advanced-rag.md](advanced-rag.md), [semantic-caching.md](semantic-caching.md).
 
 ---
 
@@ -45,7 +40,7 @@ Declared in **`requirements.txt`** at the repo root (install with `pip install -
 | **`scripts/sync_d2l_en.py`** | Sparse-clone [d2l-ai/d2l-en](https://github.com/d2l-ai/d2l-en) into `data/corpus/d2l-en/` (chapter folders + minimal files). Needs **Git** on `PATH`. |
 | **`docker-compose.yml`** | **Redis Stack** if you set `SEMANTIC_CACHE_BACKEND = "redis"` in `config.py`. Not required for JSON file cache. |
 
-There is no separate CLI “query” script in Phase 1; questions go through Streamlit or a short Python REPL/snippet you write against `rag_assistant.pipeline.query.answer_question`.
+There is no separate CLI “query” script; questions go through Streamlit or a short Python snippet calling `rag_assistant.pipeline.query.answer_question`.
 
 ---
 

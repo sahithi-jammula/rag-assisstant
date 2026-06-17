@@ -1,6 +1,6 @@
 # Technology stack (this repo)
 
-This document records **what** we use for **Basic RAG (Phase 1)** and **Advanced RAG (Phase 2)** in this project, **why** it fits a learning RAG setup, and **what you might swap** later without throwing away the architecture.
+This document records **what** the project uses, **why** each piece fits a transparent RAG stack, and **what you might swap** later without rewriting the whole design.
 
 ## Summary table
 
@@ -8,15 +8,15 @@ This document records **what** we use for **Basic RAG (Phase 1)** and **Advanced
 |-------|--------|------|
 | Language | Python 3.11+ | Readable ecosystem for ML and glue code. |
 | UI | Streamlit | Fast UI for experiments; minimal front-end boilerplate. |
-| Embeddings | `sentence-transformers` + `all-MiniLM-L6-v2` | Local CPU-friendly model; good baseline for teaching similarity search. |
-| Lexical rank (optional) | `rank-bm25` | BM25Okapi over chunk tokens; fused with dense ranks via RRF. |
-| Rerank (optional) | `sentence-transformers` **CrossEncoder** | Second-stage scoring of `(question, chunk)` pairs. |
+| Embeddings | `sentence-transformers` + `all-MiniLM-L6-v2` | Local CPU-friendly model; solid default for similarity search. |
+| Lexical rank | `rank-bm25` | BM25Okapi over chunk tokens; fused with dense ranks via RRF. |
+| Rerank | `sentence-transformers` **CrossEncoder** | Second-stage scoring of `(question, chunk)` pairs. |
 | Chunking | `langchain-text-splitters` | Battle-tested `RecursiveCharacterTextSplitter`; easy to tune. |
 | PDF parsing | `pypdf` | Pure-Python PDF text extraction (successor to the older PyPDF2 line). |
 | Paths | `pathlib` | Standard library path handling (clearer than string paths). |
 | LLM | **Gemini** (`google-generativeai`) or **OpenAI** (`openai` SDK) via `LLM_PROVIDER` | Swappable `LLMClient`; `echo` for offline checks. See [llm-providers.md](llm-providers.md). |
-| HyDE (optional) | Same LLM + embedder | Hypothetical passage merged into **dense** query vector ([advanced-rag.md](advanced-rag.md)). |
-| Chapter filters (optional) | Path-derived `metadata` + `config.py` | Restrict BM25 + dense candidates ([advanced-rag.md](advanced-rag.md)). |
+| HyDE | Same LLM + embedder | Hypothetical passage merged into **dense** query vector ([advanced-rag.md](advanced-rag.md)). |
+| Chapter filters | Path-derived `metadata` + `config.py` | Optional restriction of BM25 + dense candidates ([advanced-rag.md](advanced-rag.md)). |
 
 > **Note on “PyPDF”**: many tutorials say “PyPDF”; this repo uses the maintained **`pypdf`** package on PyPI. Functionally you still “read PDFs into text” the same way; see [document-ingestion.md](document-ingestion.md).
 
@@ -26,14 +26,14 @@ This document records **what** we use for **Basic RAG (Phase 1)** and **Advanced
 
 ### Streamlit
 
-- **Pros**: one Python file can expose uploads, buttons, and chat; great for demos and coursework.
+- **Pros**: one Python file can expose uploads, buttons, and chat; fast to iterate.
 - **Cons**: not a production web framework; session and concurrency models are simplistic.
 
 **Alternatives later**: FastAPI + React/Vue if you need auth, scaling, or custom UX.
 
 ### sentence-transformers (`all-MiniLM-L6-v2`)
 
-- **Pros**: runs locally; small download; fast on CPU; widely documented for teaching embeddings.
+- **Pros**: runs locally; small download; fast on CPU; widely documented.
 - **Cons**: not the strongest retrieval model for subtle technical questions; English-centric.
 
 **Alternatives later**: `bge-small-en-v1.5`, E5 family, or hosted embedding APIs—usually better quality at the cost of complexity, latency, or money.
@@ -46,7 +46,7 @@ This document records **what** we use for **Basic RAG (Phase 1)** and **Advanced
 **Alternatives later**:
 
 - **Chroma**, **LanceDB**, **Qdrant**: richer metadata filters, hybrid search integrations, server modes.
-- Still worth learning FAISS first: it sharpens your understanding of “vector + id + metadata.”
+- FAISS keeps the model “vector + row id + sidecar metadata” explicit.
 
 ### langchain-text-splitters
 
@@ -93,14 +93,14 @@ flowchart TB
   FAISS --> OAI
 ```
 
-Embeddings and search are **local**; generation is **remote** (Gemini or OpenAI, depending on `LLM_PROVIDER`). That split is common in learning projects: keep retrieval private, pay only for generation.
+Embeddings and search are **local**; generation is **remote** (Gemini or OpenAI, depending on `LLM_PROVIDER`)—retrieval stays on-box unless you change the design.
 
 ## Version pinning strategy
 
-`requirements.txt` pins known-good ranges for reproducibility. For a course or lab, you may relax pins—if you do, keep a note of what worked in [troubleshooting.md](troubleshooting.md).
+`requirements.txt` pins known-good ranges for reproducibility. If you relax pins, note working combinations in [troubleshooting.md](troubleshooting.md).
 
 ## Related reading
 
 - [rag-pipeline-deep-dive.md](rag-pipeline-deep-dive.md) — How these pieces connect in a query.
-- [advanced-rag.md](advanced-rag.md) — Hybrid BM25, RRF, reranking, env flags.
-- [phase-roadmap.md](phase-roadmap.md) — **Basic RAG (Phase 1)** vs **Advanced RAG (Phase 2)** only; no agent roadmap here.
+- [advanced-rag.md](advanced-rag.md) — Hybrid BM25, RRF, reranking, `config.py` knobs.
+- [pipeline-overview.md](pipeline-overview.md) — End-to-end pipeline flowcharts.

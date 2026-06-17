@@ -1,6 +1,6 @@
 # Document ingestion
 
-Phase 1 ingests **Markdown, plain text, and PDFs** from disk. It does **not** crawl external websites at runtime; you add material under `data/corpus/` (including optional **git sparse clones** of open textbooks).
+The loaders ingest **Markdown, plain text, and PDFs** from disk. They do **not** crawl external websites at runtime; you add material under `data/corpus/` (including optional **git sparse clones** of open textbooks).
 
 The repository ships a **small tracked hint** under `data/corpus/bundled/` (`README.md` only) plus **`samples/`** so a fresh clone can build a minimal index. For the full **Dive into Deep Learning** English sources, run the helper script below (git sparse-checkout of `chapter_*` trees only).
 
@@ -39,7 +39,7 @@ python scripts/sync_d2l_en.py --clean
 
 More detail: [../scripts/README.md](../scripts/README.md).
 
-## Supported formats (Phase 1)
+## Supported formats
 
 | Extension | Handler | Notes |
 |-----------|---------|------|
@@ -55,7 +55,7 @@ Unsupported files are skipped with a warning in the indexing report.
 2. App writes bytes to `data/uploads/` with a sanitized filename (see code for collision handling).
 3. **Rebuild index** re-reads uploads alongside `data/corpus/`.
 
-Uploads persist until you delete them from `data/uploads/` or replace them. If you need “ephemeral only” uploads, that would be a small Phase 1 variant (write to `tempfile` instead)—not the default here.
+Uploads persist until you delete them from `data/uploads/` or replace them. Ephemeral-only uploads would require a fork (e.g. write to `tempfile` instead of `data/uploads/`).
 
 ## Encoding
 

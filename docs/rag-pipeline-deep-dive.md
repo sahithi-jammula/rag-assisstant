@@ -48,7 +48,7 @@ Relevance is **not** human judgment directly; it is **geometric proximity in emb
 
 **Goal**: given a query vector, return the ids/scores of the closest chunk vectors quickly.
 
-Phase 1 uses a flat inner-product index on normalized vectors (equivalent to cosine similarity ranking for normalized vectors).
+This index uses a flat **inner product** on **L2-normalized** vectors (cosine-equivalent ranking for normalized vectors).
 
 ### Why top-k is not “truth”
 
@@ -60,12 +60,12 @@ Top-k returns the **k closest** chunks, not necessarily **k correct** chunks. If
 
 ### Context window and “stuffing”
 
-Gemini models have large context windows, but:
+Many hosted LLMs have large context windows, but:
 
 - Very long contexts increase latency and cost.
 - Models can “lose focus” in the middle of huge contexts.
 
-Phase 1 keeps a bounded amount of retrieved text (derived from `TOP_K` and chunk size). Tune rather than dumping the entire corpus.
+The prompt uses a **bounded** amount of retrieved text (from `TOP_K` and chunk size). Tune rather than stuffing the entire corpus.
 
 ## 6. Prompting
 
@@ -77,16 +77,16 @@ A minimal grounded prompt contains:
 
 **Transparency**: the Streamlit UI shows retrieved chunks separately from the final answer so you can see whether grounding helped.
 
-## 7. Generation (Gemini)
+## 7. Generation (LLM)
 
-The model produces fluent text conditioned on the prompt. Even with good retrieval, models may:
+The configured model (Gemini or OpenAI, depending on `LLM_PROVIDER`) produces fluent text conditioned on the prompt. Even with good retrieval, models may:
 
 - **Hallucinate** details not in the chunks.
 - **Merge** similar concepts incorrectly.
 
-Mitigations: stricter prompts, citation requirements, reranking, evaluation sets—see [advanced-rag.md](advanced-rag.md) and [phase-roadmap.md](phase-roadmap.md).
+Mitigations: stricter prompts, citation requirements, reranking, evaluation sets—see [advanced-rag.md](advanced-rag.md) and [pipeline-overview.md](pipeline-overview.md).
 
-## Failure modes (teaching checklist)
+## Failure modes (quick checklist)
 
 | Symptom | Likely causes |
 |---------|----------------|
