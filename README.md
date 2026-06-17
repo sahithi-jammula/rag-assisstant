@@ -55,6 +55,8 @@ Python **3.11+**, **Streamlit**, **sentence-transformers** (embeddings + cross-e
 
 Optional Redis: `docker compose up -d` and set cache backend in `config.py` ([redis-stack.md](docs/redis-stack.md)).
 
+**Public demo from Git:** [deploy-public-demo.md](docs/deploy-public-demo.md) (Streamlit Community Cloud + Render).
+
 ---
 
 ## Configuration
@@ -76,6 +78,7 @@ Optional Redis: `docker compose up -d` and set cache backend in `config.py` ([re
 | Retrieval stack + knobs | [`docs/advanced-rag.md`](docs/advanced-rag.md) |
 | Commands & debugging | [`docs/scripts-and-commands.md`](docs/scripts-and-commands.md) |
 | Secrets & network exposure | [`docs/security-and-secrets.md`](docs/security-and-secrets.md) |
+| Public demo (Git → URL) | [`docs/deploy-public-demo.md`](docs/deploy-public-demo.md) |
 
 ---
 

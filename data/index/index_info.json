@@ -1,0 +1,786 @@
+{
+  "built_at": "2026-06-09T09:28:43.175042+00:00",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "sources": [
+    {
+      "path": "data/corpus/d2l-en/chapter_appendix-mathematics-for-deep-learning/distributions.md",
+      "sha256": "173f8dd8c437560bae13e11c98bab081492e250fbf823340536a580fe4daaa75"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_appendix-mathematics-for-deep-learning/eigendecomposition.md",
+      "sha256": "e04e5f08b40ba32a76054d6bcbc157467fb5935289e0734740109cc977a1ede3"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_appendix-mathematics-for-deep-learning/geometry-linear-algebraic-ops.md",
+      "sha256": "066c856e5860ea00a7cd49542250e4c97dc810c0a9bfbe3c1e4bf2e66d7c356e"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_appendix-mathematics-for-deep-learning/index.md",
+      "sha256": "f4085dc222bdfca8f0c44b0614c5788f300215493f44168507b4b179d5240cc9"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_appendix-mathematics-for-deep-learning/information-theory.md",
+      "sha256": "6098f37c6262e5403a4c1241dc9fc551dc916629dd59ee8289ca0e1613b370f7"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_appendix-mathematics-for-deep-learning/integral-calculus.md",
+      "sha256": "521f0e799cf076be0c21ff25e53e8127f52202d6dbb9a332fb33feba52907100"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_appendix-mathematics-for-deep-learning/maximum-likelihood.md",
+      "sha256": "d26ee1cf274e9eab38ffa567acb919155a7aec8692cec7ca3bfdfd66d95cef5a"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_appendix-mathematics-for-deep-learning/multivariable-calculus.md",
+      "sha256": "2064011aea85df2626ac6fba36db283b79c5d60ebdab1090cf62a76ecee8014d"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_appendix-mathematics-for-deep-learning/naive-bayes.md",
+      "sha256": "b26ddcc560a344c99ba5ee5ae256b21fbcff66171ac3793f1228c43ad86a1e07"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_appendix-mathematics-for-deep-learning/random-variables.md",
+      "sha256": "506e48d177d6753b65a671702f4e85422d0501496a085728960799ec4bd1e43f"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_appendix-mathematics-for-deep-learning/single-variable-calculus.md",
+      "sha256": "458a9927adffffc025be9046a3c7e397a9b5083d4e5479453949802c4781931d"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_appendix-mathematics-for-deep-learning/statistics.md",
+      "sha256": "361491a4506c193d4da2f38a2e3a250c7bcb207140a108caf0f3470e6dc37c13"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_appendix-tools-for-deep-learning/aws.md",
+      "sha256": "a2e963bf4416c283ffea9b9d211acb2c23c5ba57130729f133ef45deb944f945"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_appendix-tools-for-deep-learning/colab.md",
+      "sha256": "440b815c8b904413e00bd2d5deb6e8f2c861b4435376c2e0a85bf26f7b476813"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_appendix-tools-for-deep-learning/contributing.md",
+      "sha256": "a968b67392e337db56ebd444d57fc5362cd14d9c3cf37bf4727ff9a0040e1c7d"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_appendix-tools-for-deep-learning/d2l.md",
+      "sha256": "fe84a36ed875a99223d6c7040df197ecdd1d310cd5825f0904e05839441f4d52"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_appendix-tools-for-deep-learning/index.md",
+      "sha256": "631f36b2eefa4e1db66e8ed638ea915587f85d4e80203717efada981ff636e25"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_appendix-tools-for-deep-learning/jupyter.md",
+      "sha256": "19a378e168cfe040b5e7e596a70052ea5f4add70f2561cf91dc3c4079d2c743b"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_appendix-tools-for-deep-learning/sagemaker.md",
+      "sha256": "dfa3bf1d2de8fa8bf02fc3d3cfe78491bd57d7306833d50c7ac80df80d6da70c"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_appendix-tools-for-deep-learning/selecting-servers-gpus.md",
+      "sha256": "144af54a2d46794e072462b431eb82b66ee4d5755298067532a827a0fae103a1"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_appendix-tools-for-deep-learning/utils.md",
+      "sha256": "7a89a8fd5776513a3d2bd414e8ef58caa11bd35c8a144d41353395d55eac162c"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_attention-mechanisms-and-transformers/attention-pooling.md",
+      "sha256": "e8701fde7ec437764fbb990c87999731a748ec014dd71366ad5d1bebcc0c9d2a"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_attention-mechanisms-and-transformers/attention-scoring-functions.md",
+      "sha256": "0ff7897c34919301660855ae6820173b657dd28926f7de4ae3ec527454c4285d"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_attention-mechanisms-and-transformers/bahdanau-attention.md",
+      "sha256": "8e4a4c470f0426475f4f0fc45821c52a0e244dd6171f439504084d2aa6013ab9"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_attention-mechanisms-and-transformers/index.md",
+      "sha256": "16d46c0f77288b3a869bee02e368a0c7a15abe33dc86599b5bc2a7e4faef99b5"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_attention-mechanisms-and-transformers/large-pretraining-transformers.md",
+      "sha256": "814e0187a10e790822da4783a6d68efdaf58943f4f352788a2a410748347d419"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_attention-mechanisms-and-transformers/multihead-attention.md",
+      "sha256": "97404b61a99bcb29ae18ad64147562244f803ac6af2bd5b17b3e3cba8e80a108"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_attention-mechanisms-and-transformers/queries-keys-values.md",
+      "sha256": "880642f004c40c95fc5ecc0b6dee98aedb5fc014ab814bbff35838441de12c8d"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_attention-mechanisms-and-transformers/self-attention-and-positional-encoding.md",
+      "sha256": "8b6eeedba841fbd231edaa5f0f1524bf17c82449623bd2e46f8da21a0cead35f"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_attention-mechanisms-and-transformers/transformer.md",
+      "sha256": "085f66181f137620d27b61eabfeefe3927258abaabdf2693a8887bb186415c82"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_attention-mechanisms-and-transformers/vision-transformer.md",
+      "sha256": "290574b82b91f9efca4f90bb56d29a76db2de85666db5d1e38850cdf32709e07"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_builders-guide/custom-layer.md",
+      "sha256": "9a24c84a2a3261a2b20f189271d0ac89fa54921e647108f63c308b333dc3eab2"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_builders-guide/index.md",
+      "sha256": "4e441000ea5cc21b0e6a21ba2f776999e7ea50002d7b8f8ddb7b859befca6a06"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_builders-guide/init-param.md",
+      "sha256": "ec449d02827c83150da653afec85da3fb2cf625cbf27ead85d01c0a15c73ee47"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_builders-guide/lazy-init.md",
+      "sha256": "d36b8a49fda3bc02be155ef38d0af3abbadb181e96232fb911a389529383fdd5"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_builders-guide/model-construction.md",
+      "sha256": "c8a3c2c30707ba97aa63ef49bed73be88a684b651ac0f788e990834c4174e4ed"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_builders-guide/parameters.md",
+      "sha256": "ddca72a9f4744289da465e449e80c05cb690c53b3603210f01d20094a715e493"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_builders-guide/read-write.md",
+      "sha256": "5f9b99a7c1cb8d5ebee6dd81e1b5b6ed3a6fb042f481b56c55dc63ad90a00212"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_builders-guide/use-gpu.md",
+      "sha256": "0375b07999c7c872e84aba0e9e43654f2b317c49589ffd529674fce70482be28"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computational-performance/async-computation.md",
+      "sha256": "285c8c8d4a2a656a2f17bd7d56d3bbf54f2976ab2a143240514d47a97739bad6"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computational-performance/auto-parallelism.md",
+      "sha256": "0a407cf55b8c3589c544c63f7006827a9c672c51c6bf22843cfdabe877bc2590"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computational-performance/hardware.md",
+      "sha256": "8fbfb39756481c9f4e6f672f9f61c8449b687a8038d9a2597457611ba2905719"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computational-performance/hybridize.md",
+      "sha256": "9108352a0582d5be03966b4d2a17d9040c8ce3c56e6a7087a84811940dda62ba"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computational-performance/index.md",
+      "sha256": "a83233c68c47cd87fb825c99d020d9e06ea6ec1437dfe2bf0d2c7a6835e9dc0d"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computational-performance/multiple-gpus-concise.md",
+      "sha256": "67c25adc5f3d858caa8dae38921948094be9b632264e7b751582598905f209b7"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computational-performance/multiple-gpus.md",
+      "sha256": "f7b0efc657dc905b3d8175e7d3120ffe5698ce96d4fc25b1495dc0ddfbdcefe1"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computational-performance/parameterserver.md",
+      "sha256": "fb7fbbe9a53981e2f74667c07282f6168a7b75e5ad61957e3a5e8e9d82a6bb19"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computer-vision/anchor.md",
+      "sha256": "91cf2b83e0bab337f35d2ff241bcfcda7047d0985dc5f2bd2bdfa879483cd42b"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computer-vision/bounding-box.md",
+      "sha256": "a62be72e82f8e2ca2c3dfcc8589c5fb25a93d3978b37f9ced4d1c160163d7b62"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computer-vision/fcn.md",
+      "sha256": "36089364fe1e1358003ad0e52af4ba6921ecbeaf8e2c5c10248e0e4d582a2507"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computer-vision/fine-tuning.md",
+      "sha256": "9d86a49a030d5a823cc5336f97aed9fcc1955ec84984484b33073b6b55051b28"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computer-vision/image-augmentation.md",
+      "sha256": "43a9ee3dafcaef44e3295ec81341529a2a1716d87fdcc0a548ecee91cc291357"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computer-vision/index.md",
+      "sha256": "2c25477a9c0d7540b0d467211d9dd5377bd02dfddb7f6b6634aa02284cb1e5b2"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computer-vision/kaggle-cifar10.md",
+      "sha256": "8aef74ffb42b53951df68c52be70e10faa6827f0aae3be02818fa64765da4a79"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computer-vision/kaggle-dog.md",
+      "sha256": "0c3375a1d08e0e30729176dc4132d0764d76c74127cfb03f984ca6497dbb8008"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computer-vision/multiscale-object-detection.md",
+      "sha256": "f0d5b37584f497a085715f0255efe6f8c8dfde08132be91eef82847f595ceade"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computer-vision/neural-style.md",
+      "sha256": "e0e7e3b53abc58f25a860290b4cd164dd29628a707a6b5e0bdb17aa00b3cfc25"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computer-vision/object-detection-dataset.md",
+      "sha256": "e86a7155b4dd0129e95dba6f2c115225b52008205dc40326f7a5643bd20e0243"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computer-vision/rcnn.md",
+      "sha256": "039e028b8d7e637dbeb304bca9b1db5a824b6762353c73aa589820ba51784755"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computer-vision/semantic-segmentation-and-dataset.md",
+      "sha256": "0bb3bb35d053e98e40440aa4c2af135c6815a2da2cfeb3a27d7817a5ed7a07b6"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computer-vision/ssd.md",
+      "sha256": "1532abaa7871da715c9e8c958d47164bb9bba81895d82beb0f5fb35ae0f8a62d"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_computer-vision/transposed-conv.md",
+      "sha256": "0a204b5a3274d390a3af1f1237fb1f965c6436d8f8729a5bc423adc7ac1bd041"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_convolutional-modern/alexnet.md",
+      "sha256": "41a541c64320fe9efc0371c0cde7f47242d8fb740a8d6facf7f47ee676146703"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_convolutional-modern/batch-norm.md",
+      "sha256": "a82dc20e9a07dcee5e88ff4e094720bf524aab8ace7d9a6aca47f9827b4e9a33"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_convolutional-modern/cnn-design.md",
+      "sha256": "d28aec8bde19f8e2f4333e4d621902a8dc1fab3df5b2a4da3c24b56339cbdf35"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_convolutional-modern/densenet.md",
+      "sha256": "cd099c68314e35fe4a7164ead9cc8c100f5791af42f4455558593385d35832e4"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_convolutional-modern/googlenet.md",
+      "sha256": "6f945593007bc4f63979c554d6f2078b8b4b75782853e78aab3af732bf259f1d"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_convolutional-modern/index.md",
+      "sha256": "0ecdce6d470d56280d931b6516ee15ddd1f8353f050dd678992677c85e9497d2"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_convolutional-modern/nin.md",
+      "sha256": "3a711ec1c5adfca2e0e8c448c0930998febc2e0d3381794843e6544046842475"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_convolutional-modern/resnet.md",
+      "sha256": "64325be1880bac5ed388512412877b9fae653e4c967789c93319a4a91a316ed5"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_convolutional-modern/vgg.md",
+      "sha256": "c27ef2b630bab632e4090da38f0377f26e5642ab686f4d3ba4b79a4b934d0bfa"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_convolutional-neural-networks/channels.md",
+      "sha256": "3c2cc261f2351a373861af2582104addb9013bb0d222013af6d16b0749fc49dc"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_convolutional-neural-networks/conv-layer.md",
+      "sha256": "5f41b0ebf6844a96372e103e3dd0efe0341ea959532896a340be13d0c8c23275"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_convolutional-neural-networks/index.md",
+      "sha256": "eae8032da8aeda80fe4ec249af66f75cbf70dbb18da67e8e88ef7500ec38844b"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_convolutional-neural-networks/lenet.md",
+      "sha256": "6dfaae50762199fa53bc5fac21ba72f53a69de576fd5bd38a93d3d3a5b7f6701"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_convolutional-neural-networks/padding-and-strides.md",
+      "sha256": "c0fec95a1a9e9e1b660f98f27b876e7caa3a53932601e5c5c9bb81be45b8e5d2"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_convolutional-neural-networks/pooling.md",
+      "sha256": "57b031b5fe27e3b398ebc5857506e8034f2df2b47a8f2351a9e4ed22019d2d89"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_convolutional-neural-networks/why-conv.md",
+      "sha256": "0fa140a9d25c984a7a41578dbd1a96a1aaa9ea0b35c297d581edff4a737e24ef"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_gaussian-processes/gp-inference.md",
+      "sha256": "f9398b166214b4625c16b03f18b9b39115c200aa59d27362b7fa29f85ba10749"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_gaussian-processes/gp-intro.md",
+      "sha256": "e7df76e119b6c0786767de578fefb009c7284cc802dbdb73a5cd1a825f29a4d9"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_gaussian-processes/gp-priors.md",
+      "sha256": "b9713c62fe5d7c6db60e1304e7c3e76e669bc2ed13ee15d170a55550b0601179"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_gaussian-processes/index.md",
+      "sha256": "0283f4cd4183252a3dedc7d5e76c28df7338e2ae4eac3e1b2146ba95bb808e8e"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_generative-adversarial-networks/dcgan.md",
+      "sha256": "4288365b096d8a2713a89f79e3b6e57483f42c4684a0a97c902da27bb2b31a73"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_generative-adversarial-networks/gan.md",
+      "sha256": "b21af3c808d49ccd4ee184385d31e025b9d65249802c76905d6285d222acb9f6"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_generative-adversarial-networks/index.md",
+      "sha256": "84617c3489aa21204ea4bbaa91ca4ce6847718c2d5e83ef57672018b2c6c25ed"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_hyperparameter-optimization/hyperopt-api.md",
+      "sha256": "2929cde2ffb9441555d97e232bec9e82fcfc6158c398a27ef79eb64d4aa84897"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_hyperparameter-optimization/hyperopt-intro.md",
+      "sha256": "d3b4c18d2c2935aee639633f2d08248f88a9fefad953b2e039e1127d5f617c27"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_hyperparameter-optimization/index.md",
+      "sha256": "1fe59f1040c8dd15a8578e55cb749baccc9ebfd88de379c296e446432d40b6e6"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_hyperparameter-optimization/rs-async.md",
+      "sha256": "c80ca11d0f965927555e56750ab636c2e9d58502e9fbda1977c18ff89fbd56c1"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_hyperparameter-optimization/sh-async.md",
+      "sha256": "eda76639c048ba10be4cd6d35bc344a9b39ab31852f080ca37bf671e9f0ed643"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_hyperparameter-optimization/sh-intro.md",
+      "sha256": "5e592092ef5b47c3a32c7386f2a9dedc26dc424e5c4f6f9207bfd58a4fc36e4d"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_installation/index.md",
+      "sha256": "a18af20d0a4c1815a23c2e1ccab52c7f2e40a4fe66a6d31c9de1b7d2a58c0df7"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_introduction/index.md",
+      "sha256": "fa8e9a8cbe58a2dcb2e7e8a45b86b05c3b45ee0ba370ea4777fbd8856c045db5"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_linear-classification/classification.md",
+      "sha256": "6c68e6eeaeee4b9994c9751ea667ab38cdb906cabf3de40195a0b37b7c5da305"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_linear-classification/environment-and-distribution-shift.md",
+      "sha256": "524c1ae014be3b2ba046eea1dd22cc180120dafed13285f0f5dd6f6223cb4e57"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_linear-classification/generalization-classification.md",
+      "sha256": "e525245cc636ceb978f077ad289a5a5d4e4d8e1e0ae0b47a86ed5966f63432a3"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_linear-classification/image-classification-dataset.md",
+      "sha256": "207461b602cb42ea6aa4e99bf2e4945f62bf92575a2ca66699e2211da345f05d"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_linear-classification/index.md",
+      "sha256": "6802b3b4eb38d5c993af2bf5f99771dc85425b3de485669c5580b49311bc3c6d"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_linear-classification/softmax-regression-concise.md",
+      "sha256": "b5b574f09883a76050df8d72aba5ddcaa2617a2ad7fd64132f3dc97370ebfd44"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_linear-classification/softmax-regression-scratch.md",
+      "sha256": "921835f318de0b8e2aa34ab181483251b114ea1367c46540b2faeeee9456b7bd"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_linear-classification/softmax-regression.md",
+      "sha256": "82c997368fa3003b2d8e44742da8e3bf4459ee7f1d24caba4e358f95166366b7"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_linear-regression/generalization.md",
+      "sha256": "2090b8a2dc6a7b9d8d6f42f0aeaaad9ba76c59680ada6fb6ecef8160ac5122d6"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_linear-regression/index.md",
+      "sha256": "ed9b1288eddfd50448a4c3097e1dcc0084dc320c29ffb1871e2330d5454db547"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_linear-regression/linear-regression-concise.md",
+      "sha256": "f7e413bb31566176b315fbba4910d1b05fbb1a4f12ffe5c8e605071452539ecd"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_linear-regression/linear-regression-scratch.md",
+      "sha256": "2a96d341e42068e121c0e6bdc0eed0e09e2606b3aa7d568b70cb25a0d0448157"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_linear-regression/linear-regression.md",
+      "sha256": "c854c09f327abfec72b1d34a3e3c53e507514b28113d9e5798e30f9f2195cb49"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_linear-regression/oo-design.md",
+      "sha256": "a908f1697bbc385b911689a734f7919229c3defd297e15ffb5699557996c41fc"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_linear-regression/synthetic-regression-data.md",
+      "sha256": "a066643434ed32763ee1268d84da38eadd2aaba1c5ceb092d9f8526b09449b83"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_linear-regression/weight-decay.md",
+      "sha256": "081edd89fc50afb5049df925e82d7a33ea485f4cf1ee6ed28c78f30829b5f388"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_multilayer-perceptrons/backprop.md",
+      "sha256": "665535325bff4f8ee3af5ac030388ccbbf7c4c95e56ef72a217b453bc9d72127"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_multilayer-perceptrons/dropout.md",
+      "sha256": "e5fd93ac9cca9ad6a563f216df28af485ea885b07a4f8e0ce874c5045a619cd3"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_multilayer-perceptrons/generalization-deep.md",
+      "sha256": "25463e3c34bcc764baf3f6f44a8ff98b638d2576be4e22761b4f3f7babe528a0"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_multilayer-perceptrons/index.md",
+      "sha256": "9fd20a01e835290310e657601cafcbb23cf195a76e02ba60a864a54a2bda0cd1"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_multilayer-perceptrons/kaggle-house-price.md",
+      "sha256": "cd97e55d12bfab80d4ec185c1b719e7c87733954ed93ac0067be86c806d18caa"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_multilayer-perceptrons/mlp-implementation.md",
+      "sha256": "b9ef3697ad5d78b6212fc841ac5ecb54cdae8705b7f3a4ceb5cfa002161b6601"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_multilayer-perceptrons/mlp.md",
+      "sha256": "e15c9e2ca430b549e506c1f53247eebd3f45f91681a68bd025721aebfd46ca6e"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_multilayer-perceptrons/numerical-stability-and-init.md",
+      "sha256": "0a53effb2fa59ca8b6edb6d3c46a7b35b40e5117ad96393f7ff84602342d9448"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_natural-language-processing-applications/finetuning-bert.md",
+      "sha256": "00cb5309d2fc3453b9b29c79051f39e58895748f50fc1a11c1f61f44135d2eaa"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_natural-language-processing-applications/index.md",
+      "sha256": "9a5d8dbb0898bca628fd6b92c6a0416818d2b3eda78628961413b36418a3d54e"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_natural-language-processing-applications/natural-language-inference-and-dataset.md",
+      "sha256": "683180beb8589a5112330b4b2b1bb67ca54274f2733abf9a323f78aab0c171f1"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_natural-language-processing-applications/natural-language-inference-attention.md",
+      "sha256": "936f5fe0f9cedec0a7326cf948f552c38223af7633b258a1e222077242216d7b"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_natural-language-processing-applications/natural-language-inference-bert.md",
+      "sha256": "a75e1388fd20fad914063ab278e13ad063bcc90046a586655ad9ecf7d8ce0d21"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_natural-language-processing-applications/sentiment-analysis-and-dataset.md",
+      "sha256": "68f6bf1f639477001bc53570fbe627a05357f10072373f38a3a90290e094067b"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_natural-language-processing-applications/sentiment-analysis-cnn.md",
+      "sha256": "6111e44e7042dde9ab8a538d4e0d30e4f4723b4cb1fe207674ec76fe26f749a6"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_natural-language-processing-applications/sentiment-analysis-rnn.md",
+      "sha256": "80df33accf850f03ced9aca39fa3455aa6137de2eccb8bdc6ccf3f3f01e50549"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_natural-language-processing-pretraining/approx-training.md",
+      "sha256": "ea2dd3bfa159d8f8bc8c57b426c7c2ba87def6f550ecec5af27d07a752e109ce"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_natural-language-processing-pretraining/bert-dataset.md",
+      "sha256": "e67cfac5fe81f09c562e1795d8ad8ce381d6c33fb1a857fd89427d0cf31be0e8"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_natural-language-processing-pretraining/bert-pretraining.md",
+      "sha256": "60931e8df98a4138b9f1b5544ef81fcb1ba6438a616e4cc6ff0c0f91f474366f"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_natural-language-processing-pretraining/bert.md",
+      "sha256": "8b306fe4f290ff1a27deb4529a3f4e84f31612065feee0984a8e495a0e5200cc"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_natural-language-processing-pretraining/glove.md",
+      "sha256": "e8f233edb9d048608b22646fcd3252731a2f37b872e236b8c043cffc7adbf6d1"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_natural-language-processing-pretraining/index.md",
+      "sha256": "d015676eeac2bebd0da48eca517a48a0c3a6ac6379f238ab48938612f3930dda"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_natural-language-processing-pretraining/similarity-analogy.md",
+      "sha256": "a6d2ac7f3a182ddb85189e2d3842c8b57caf49be60fb1acb2b8bf29f854e3b98"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_natural-language-processing-pretraining/subword-embedding.md",
+      "sha256": "406257070e723702a904429b36e3d7413676c3c1b4993100c5a15d18f95683c0"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_natural-language-processing-pretraining/word-embedding-dataset.md",
+      "sha256": "106fd54974ae5a9dc5d37d71aee1b01def9aee6b1168df74bd01cae11a053ec4"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_natural-language-processing-pretraining/word2vec-pretraining.md",
+      "sha256": "104bd943ff8db50f2762e47ed2d84a6254e5dc106cb9e839b86a5924bc0db965"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_natural-language-processing-pretraining/word2vec.md",
+      "sha256": "4c9431d91063ebf2453528bfb9904b885d426bf6dde1c2a5c04cb1d1207fcf63"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_notation/index.md",
+      "sha256": "447c1ed7afdaab72ca7ccd1657c8437db6bfa512b8b9e0de02c6985fe03f203a"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_optimization/adadelta.md",
+      "sha256": "36e02712eaf02276eb5b70fac4b9a0b287056a89f95777ff6feaecc7545847e5"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_optimization/adagrad.md",
+      "sha256": "54c865c81c417442458a6ec67b39ec2eb88219651d9121414ed9c9361cc9ffab"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_optimization/adam.md",
+      "sha256": "b028c34fa6b0271df8f76311f255a9ca1cd213a9097d53e2e7c234b557c7ccb6"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_optimization/convexity.md",
+      "sha256": "947a80eabf6414b95160d0c364ed57263d97b9a2aabb12c6ca5b52f56e450d94"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_optimization/gd.md",
+      "sha256": "c614912211219b60e4cc91b1385b92ac5eb7cac77ca26b4e8c52fa02db810f76"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_optimization/index.md",
+      "sha256": "17890a44493033cb8b0362aa72950569723e378ae67471b1ddf28aacd73722d7"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_optimization/lr-scheduler.md",
+      "sha256": "2f030061c7b5941d93c9d8a7b40ab5245556eb0be4caea3ce5078439c7f5c7f4"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_optimization/minibatch-sgd.md",
+      "sha256": "5a7f74531bb28744080a5edc41e1435cfb5457cc5aab4bd71eb43e396acf86bb"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_optimization/momentum.md",
+      "sha256": "10a04b83ed4fc93a204c22b54a726cd7abb4ff3ef4c1a964490f94a7cc46c991"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_optimization/optimization-intro.md",
+      "sha256": "13d78f4761344fc8453edf76808cf959603c17bd896bb16a4d768f279e1312b8"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_optimization/rmsprop.md",
+      "sha256": "07c0af37600cade8b86717bf454aa8a6961b5b9d478b8e93bc55193cc2598164"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_optimization/sgd.md",
+      "sha256": "b473add6ca7ddd7c46595bfa8f456f41870301b4f1ba8a718240b79f533cf952"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_preface/index.md",
+      "sha256": "723697899c0dee8debd2e68842060086df6aefddee1c6e7c201903ff69810528"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_preliminaries/autograd.md",
+      "sha256": "8b27c572d217e118144fe8b52b336fbc4015cddfb7ac647e986407d115f54a91"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_preliminaries/calculus.md",
+      "sha256": "a325c626fd77f5be37d32579cd0a5cf4a75c9179c995bce08baa487e05026419"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_preliminaries/index.md",
+      "sha256": "c0351749ef2351a0a2966a3868b223452e8e8f6c240cadcf0b7093d21ea73dea"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_preliminaries/linear-algebra.md",
+      "sha256": "9da729424d50142267f032edee3d0ba0c117597be3692c366a78b58f1acf9a98"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_preliminaries/lookup-api.md",
+      "sha256": "53ae38f6f8166b94108a7bb9ef9fc48d55f0186ba2d27df1634e117bf0d43b89"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_preliminaries/ndarray.md",
+      "sha256": "b4bd8750d81c202c85c01505cf393cc6e70f2ea1e671b82a8d9f8d35f44f5a15"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_preliminaries/pandas.md",
+      "sha256": "230318b507a258e3877a49c2abcecd3d69a109aab9f975294d868db6c24cb6b3"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_preliminaries/probability.md",
+      "sha256": "02b59c319786641678fee4edaf61d8fd038523f9d6764159a03d570e380121f1"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recommender-systems/autorec.md",
+      "sha256": "f160f763045e81b5dae576e7fc87279a535f51cb4dfe79e7e479ab3f241cef29"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recommender-systems/ctr.md",
+      "sha256": "c6b9b965208b64026cd538d961329ac61280b23a0b40a20b0370488447dd287b"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recommender-systems/deepfm.md",
+      "sha256": "b3993cfc07604ac09ed185cc6b48ba15514701a4d458da392eb1894444766c00"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recommender-systems/fm.md",
+      "sha256": "7c5a2043946b5ea40575f164247f110049069f41625d15d4220986b3fd2e65a7"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recommender-systems/index.md",
+      "sha256": "049b221b60c65ea1ad47ce26582c31d65f7653e09d7c1fd509b526166b3220f8"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recommender-systems/mf.md",
+      "sha256": "e8ca4da25cfb70587ee68f25623764ca301a3ef353cd444ee32c4ae24781f397"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recommender-systems/movielens.md",
+      "sha256": "54a13bf73e33abb0df24010cf6b4abdf12046aca18527e984cfce18bd0dcfe56"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recommender-systems/neumf.md",
+      "sha256": "4643a7d2fe9391cc3bc68dcca8c7ff9b54aac90c4e58d96096c0f5c344a712b9"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recommender-systems/ranking.md",
+      "sha256": "786082c050d472221442db39d316e5ecf2e003b79f553b86c2c5603af79821ba"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recommender-systems/recsys-intro.md",
+      "sha256": "1648bc094289e58c12b8bcfc0e92a63d03599e98635c2cc87ffc7a120f8e943b"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recommender-systems/seqrec.md",
+      "sha256": "0bd6057f68d139b4595f822ab6a3399467df96947b014b7b087e0db6df3c0bed"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recurrent-modern/beam-search.md",
+      "sha256": "b71d99c04c00dc5393991c6df4d36971e6d54e39853b01b200d4a2f038a3a833"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recurrent-modern/bi-rnn.md",
+      "sha256": "6de8c8124497b0c69703ba3805559d51eb57c96d93096b70e2d5b6e133373975"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recurrent-modern/deep-rnn.md",
+      "sha256": "eac7791ce4773f0d822a5ab254bf1edf527143dc4b3bd88f2566d5b8c92a525e"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recurrent-modern/encoder-decoder.md",
+      "sha256": "ad89663c337fc3aed42c26fb53365bb249a33ac96e45828adfb9ae0072cd0b05"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recurrent-modern/gru.md",
+      "sha256": "c7b6aaf75edac5e5d80dba8e77d482cf700b6ba3213427472871ea479c74465a"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recurrent-modern/index.md",
+      "sha256": "6d6cd27c68f02d2f0e6ab2d8642d36c532ad0ff4f2df6a9242377d7fd81b1314"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recurrent-modern/lstm.md",
+      "sha256": "66a0dc190a4641d4e17bb14f8ad57cb066a46f1ee4f472a45a3138c588008614"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recurrent-modern/machine-translation-and-dataset.md",
+      "sha256": "f23f1cbc9bc70a27affe6e3aee611db3014c3767899c50c72c4b0ef50cd645f9"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recurrent-modern/seq2seq.md",
+      "sha256": "4a8968fc425166377153fd749b359411455918496498ab3c98374a7b367b6c04"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recurrent-neural-networks/bptt.md",
+      "sha256": "fb24d5bc9a0f7a6847143f2e5af445bfa0acce2573a8d62bf981fc2986776448"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recurrent-neural-networks/index.md",
+      "sha256": "aec3e63448c143a6c2498fb65d6b740b400fa0619fd9ad2c371330dfc7e4067a"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recurrent-neural-networks/language-model.md",
+      "sha256": "19b60293fdc8f6546d24f53e528381ec0bdd99bce40ce118f2d5ac61a911e18f"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recurrent-neural-networks/rnn-concise.md",
+      "sha256": "77647fac8fb81256ed106cc4e3eed679d58deb1cbc4b1bff19ccdaeb02b4db89"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recurrent-neural-networks/rnn-scratch.md",
+      "sha256": "efc5b49c9af5662d39499132e85ccbceb87ca70b0d6cd6dc492ccdce4741e4f9"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recurrent-neural-networks/rnn.md",
+      "sha256": "cfa3068a1ff226b281c7743e7d852896486fcf797d4a9341f0dee70be92f161d"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recurrent-neural-networks/sequence.md",
+      "sha256": "081422a2ae56a90198f75a0798b1f61b2a71ab2a8c7d36902dc87872f0320cac"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_recurrent-neural-networks/text-sequence.md",
+      "sha256": "0ca5946606545695c5fd1a89ad76b37bb6efa2f106dd745dccc35810094e2566"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_references/zreferences.md",
+      "sha256": "c0d91aa82b72aa3ce0fafdf49dee013c507126514c1e40cf32d3a3a433c2d677"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_reinforcement-learning/index.md",
+      "sha256": "e9fb299b38f7e5f20ade5d2a9908c535f90722f3e535b659b11efef3ab4e97b4"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_reinforcement-learning/mdp.md",
+      "sha256": "88b589c017776707148854c986bf16f36991e43e2137772a9bd2833f2d946565"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_reinforcement-learning/qlearning.md",
+      "sha256": "3e1c645a9dd9cb1d3f460c1b3d5318c07b1a96e2f84c243dbd9f35ff199bacb9"
+    },
+    {
+      "path": "data/corpus/d2l-en/chapter_reinforcement-learning/value-iter.md",
+      "sha256": "934d893b5e8e9afa62b2206031cdd864ae67e342b8ce512d54dfa8df38a43837"
+    },
+    {
+      "path": "data/corpus/d2l-en/index.md",
+      "sha256": "c276cadb3d8ffd424cec03923bff7fae5ecb76106e78f1ed11cba4de7c581559"
+    },
+    {
+      "path": "samples/d2l-basics-sample.md",
+      "sha256": "2c8263d7ce48dc4dc1fc164eaf9fce35bf90635965604259cd3e6e7ae092fc40"
+    },
+    {
+      "path": "samples/README.md",
+      "sha256": "0419e1b6e48153cebaf986318e9ed6507e2792e6f6bd085a03fc120a95497097"
+    }
+  ],
+  "num_chunks": 8965,
+  "prompt_template_version": "1.0"
+}

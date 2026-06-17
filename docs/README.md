@@ -20,6 +20,7 @@ Documentation for the **RAG Assistant** project: what the pipeline does, how to 
 14. [development-setup.md](development-setup.md) — Environment, install, run.
 15. [troubleshooting.md](troubleshooting.md) — Common errors (Windows, FAISS, Gemini, OpenAI, embeddings, Redis).
 16. [d2l-sample-questions.md](d2l-sample-questions.md) — Example questions and paraphrase pairs for cache testing; **`SEMANTIC_CACHE_SIMILARITY_THRESHOLD`**.
+17. [deploy-public-demo.md](deploy-public-demo.md) — **Public URL from Git** (Streamlit Community Cloud, Render); secrets, first-time rebuild.
 
 ## How docs map to code
 
