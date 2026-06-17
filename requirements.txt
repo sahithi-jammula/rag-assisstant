@@ -1,0 +1,16 @@
+# RAG Assistant — Python dependencies
+# Python 3.11+ recommended
+
+streamlit>=1.28.0,<2
+sentence-transformers>=2.2.0,<4
+faiss-cpu>=1.7.4,<2
+langchain-text-splitters>=0.2.0,<1
+google-generativeai>=0.8.0,<1
+openai>=1.40.0,<2
+pypdf>=4.0.0,<6
+numpy>=1.24.0,<3
+python-dotenv>=1.0.0,<2
+certifi>=2024.0.0
+truststore>=0.9.0
+rank-bm25>=0.2.2,<1
+redis>=5.0.0,<6

@@ -1,0 +1,26 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.idea/
+.vscode/
+*.egg-info/
+dist/
+build/
+
+# User documents and generated index (placeholders tracked)
+data/corpus/*
+!data/corpus/.gitkeep
+!data/corpus/bundled/
+!data/corpus/bundled/**
+data/uploads/*
+!data/uploads/.gitkeep
+data/index/*
+!data/index/.gitkeep
+data/cache/*
+!data/cache/.gitkeep

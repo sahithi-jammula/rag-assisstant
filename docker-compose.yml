@@ -1,0 +1,12 @@
+# Redis Stack (Redis + modules). Used for optional semantic cache — see docs/redis-stack.md
+services:
+  redis-stack:
+    image: redis/redis-stack-server:latest
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-stack-data:/data
+    restart: unless-stopped
+
+volumes:
+  redis-stack-data:
