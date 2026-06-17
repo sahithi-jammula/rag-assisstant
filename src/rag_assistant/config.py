@@ -63,7 +63,7 @@ CACHE_DIR = DATA_DIR / "cache"
 SEMANTIC_CACHE_PATH = CACHE_DIR / "semantic_cache.json"
 SEMANTIC_CACHE_MAX_ENTRIES = 200
 SEMANTIC_CACHE_SIMILARITY_THRESHOLD = 0.75
-SEMANTIC_CACHE_BACKEND = "redis"  # "json" (file under data/cache/) or "redis" (set REDIS_URL; run Docker)
+SEMANTIC_CACHE_BACKEND = "json"  # "json" (file under data/cache/) or "redis" (set REDIS_URL; run Docker)
 REDIS_URL = "redis://127.0.0.1:6379/0"
 REDIS_SEMANTIC_CACHE_KEY_PREFIX = "rag:sc:v1"
 
